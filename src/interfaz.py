@@ -55,7 +55,7 @@ def sexta():
         elif frecuenciaDominante > 675 :
           Frecuencia = "Apretar cuerda"
             
-        elif frecuenciaDominante <235:
+        else frecuenciaDominante <235:
         
            Frecuencia = "Aflojar cuerda"
 
