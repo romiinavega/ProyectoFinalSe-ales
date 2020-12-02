@@ -49,15 +49,14 @@ def sexta():
         frecuenciaDominante = (indiceFrecuenciaDominante + x1)* FRECUENCIA_MUESTREO/CHUNK
 
 
-        if frecuenciaDominante> 153 and frecuenciaDominante < 173:
+        if frecuenciaDominante> 160 and frecuenciaDominante < 170: #164
           Frecuencia = "cuerda afinada, sexta cuerda 80.41 hz"
             
-        elif frecuenciaDominante > 173 :
-          Frecuencia = "Apretar cuerda"
+        elif frecuenciaDominante > 170 : #esta apretada la cuerda
+          Frecuencia = "Aflojar cuerda"
             
-        else frecuenciaDominante <153:
-        
-           Frecuencia = "Aflojar cuerda"
+        else:
+          Frecuencia = "Apretar cuerda" #esta floja la cuerda
 
         
         strFrecuencia.set(Frecuencia)
