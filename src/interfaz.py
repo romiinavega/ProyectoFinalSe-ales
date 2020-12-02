@@ -28,7 +28,7 @@ def sexta():
     FRECUENCIA_MUESTREO = 44100
 
     CHUNK = 2048
-    time= 5
+    time= 1
     window = np.blackman(CHUNK)
 
 
@@ -49,21 +49,18 @@ def sexta():
         frecuenciaDominante = (indiceFrecuenciaDominante + x1)* FRECUENCIA_MUESTREO/CHUNK
 
 
-        if frecuenciaDominante> 320 and frecuenciaDominante < 340: #LA FRECUENCIA DE LA CUERDA MI RONDA LOS 350 hz
-           Frecuencia = "cuerda afinada"
+        if frecuenciaDominante> 655 and frecuenciaDominante < 665:
+          Frecuencia = "cuerda afinada"
             
-        elif frecuenciaDominante > 340: # Se validan 10 Hz arriba
-           Frecuencia = "Aflojar cuerda"
+        if frecuenciaDominante > 655:
+          Frecuencia = "Aflojar cuerda"
             
-        elif  frecuenciaDominante < 320: # Se validan 10 Hz abajo
+        if frecuenciaDominante < 655:
            Frecuencia = "Apretar cuerda"
-       #Este if valida el ruido sucio que pueda provocar el microfono para asi solo captar el de la  guitarra
-        if frecuenciaDominante > 200 and frecuenciaDominante < 450: 
-           strFrecuencia.set(Frecuencia +  " Frecuencia Hz " + str(int(frecuenciaDominante))  )
-           # En esta linea larga lo unico que hice fue concatenar/Agregar La frecuencia que capta el microfono
-            #Estaba en float (son muchos numeros) se convirtio a int (Son numeros enteros)
-            #int() Funcion que convierte float a int
-            #str() Funcion que convierte numeros a texto             
+
+        
+        strFrecuencia.set(Frecuencia)
+            
     if __name__ == "__main__":
         p = pyaudio.PyAudio()
         stream = p.open(format=PROFUNDIDAD_BITS, channels= CANALES, rate = FRECUENCIA_MUESTREO, input= True, frames_per_buffer=CHUNK) #lectura de bits- sensor del mic
