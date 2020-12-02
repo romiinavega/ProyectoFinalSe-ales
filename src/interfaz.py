@@ -50,7 +50,7 @@ def sexta():
 
 
         if frecuenciaDominante> 655 and frecuenciaDominante < 665:
-          Frecuencia = "cuerda afinada"
+          Frecuencia = "cuerda afinada, sexta cuerda 80.41 hz"
             
         if frecuenciaDominante > 655:
           Frecuencia = "Aflojar cuerda"
